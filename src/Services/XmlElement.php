@@ -8,16 +8,14 @@ use Sabre\Xml\XmlSerializable;
 class XmlElement implements XmlSerializable
 {
     /**
-     * @var array
+     * @var array<mixed>
      */
-    private $value;
+    private array $value;
 
     /**
-     * RssElement constructor.
-     *
-     * @param $value
+     * @param  array<mixed>  $value
      */
-    public function __construct($value)
+    public function __construct(array $value)
     {
         $this->value = $value;
     }

@@ -17,7 +17,7 @@ class Feed
         $this->publisherFavIcon = $publisherFavIcon;
     }
 
-    public function generate()
+    public function generate(): string
     {
         $service = new XmlService();
         $service->namespaceMap = [
@@ -31,6 +31,9 @@ class Feed
         return $service->write('feed', new XmlElement($xmlStructure));
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function baseXmlStructure(): array
     {
         return [
