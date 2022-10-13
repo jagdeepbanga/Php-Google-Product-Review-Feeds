@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:noNamespaceSchemaLocation="http://www.google.com/shopping/reviews/schema/product/2.3/product_reviews.xsd">
+    <version>2.3</version>
+    <aggregator>
+        <name_temp>Product Review Feed</name_temp>
+    </aggregator>
+    <publisher>
+        <name_temp>Company Name</name_temp>
+        <favicon>https://www.example.com/favicon.ico</favicon>
+    </publisher>
+    <reviews/>
+</feed>
