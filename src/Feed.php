@@ -11,6 +11,8 @@ class Feed
 
     private string $publisherFavIcon;
 
+    private array $entries;
+
     public function __construct(string $publisherName, string $publisherFavIcon)
     {
         $this->publisherName = $publisherName;
@@ -28,6 +30,10 @@ class Feed
 
         $xmlStructure = $this->baseXmlStructure();
 
+        foreach ($this->entries as $entry) {
+            $xmlStructure['reviews'][] = $entry->getXmlStructure('');
+        }
+
         return $service->write('feed', new XmlElement($xmlStructure));
     }
 
@@ -39,13 +45,27 @@ class Feed
         return [
             'version' => '2.3',
             'aggregator' => [
-                ['name_temp' => 'Product Review Feed'],
+                'name' => 'name',
+                'value' => 'Product Review Feed',
             ],
             'publisher' => [
-                ['name_temp' => $this->publisherName],
-                ['favicon' => $this->publisherFavIcon],
+                [
+                    'name' => 'name',
+                    'value' => $this->publisherName,
+                ],
+                [
+                    'name' => 'favicon',
+                    'value' => $this->publisherFavIcon,
+                ]
             ],
             'reviews' => [],
         ];
+    }
+
+    public function addReview(Review $review): self
+    {
+        $this->entries[] = $review;
+
+        return $this;
     }
 }

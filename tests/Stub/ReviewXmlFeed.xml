@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:noNamespaceSchemaLocation="http://www.google.com/shopping/reviews/schema/product/2.3/product_reviews.xsd"
+      xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <version>2.3</version>
+    <aggregator>
+        <name>Product Review Feed</name>
+    </aggregator>
+    <publisher>
+        <name>Company Name</name>
+        <favicon>https://www.example.com/favicon.ico</favicon>
+    </publisher>
+    <reviews>
+        <review>
+            <reviewer>
+                <name><![CDATA[John Doe]]></name>
+                <reviewer_id>123</reviewer_id>
+            </reviewer>
+            <review_timestamp>2020-01-01T00:00:00+00:00</review_timestamp>
+            <title>Excellent</title>
+            <review_id>123</review_id>
+            <review_url type="singleton">https://www.example.com/review/1</review_url>
+            <ratings>
+                <overall min="1" max="5">5</overall>
+            </ratings>
+            <content><![CDATA[This is a review]]></content>
+            <products>
+                <product>
+                    <product_name><![CDATA[Product Name]]></product_name>
+                    <product_ids>
+                        <gtins>
+                            <gtin>1234567890123</gtin>
+                        </gtins>
+                        <skus>
+                            <sku><![CDATA[1234567890123]]></sku>
+                        </skus>
+                        <brands>
+                            <brand><![CDATA[Brand Name]]></brand>
+                        </brands>
+                    </product_ids>
+                    <product_url>https://www.example.com/product/1</product_url>
+                </product>
+            </products>
+        </review>
+    </reviews>
+</feed>
