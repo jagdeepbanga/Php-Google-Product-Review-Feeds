@@ -26,13 +26,24 @@ class ReviewTest extends TestCase
         $review->setTimeStamp('2020-01-01T00:00:00+00:00');
         $review->setTitle('Excellent');
         $review->setId(123);
-        $review->setUrl('https://www.example.com/review/1');
+        $review->setUrl('https://www.example.com/review/123');
         $review->setRating(5);
         $review->setContent('This is a review');
         $review->addProduct($product);
 
+        $review2 = new Review();
+        $review2->setName('Peter Williams');
+        $review2->setTimeStamp('2022-03-07T00:00:00+00:00');
+        $review2->setTitle('Good');
+        $review2->setId(124);
+        $review2->setUrl('https://www.example.com/review/124');
+        $review2->setRating(4);
+        $review2->setContent('Lorem ipsum dolor sit amet');
+        $review2->addProduct($product);
+
         $feed = new Feed('Company Name', 'https://www.example.com/favicon.ico');
         $feed->addReview($review);
+        $feed->addReview($review2);
 
         $this->assertXmlStringEqualsXmlString($expectedReviewXmlFeed, $feed->generate());
     }
