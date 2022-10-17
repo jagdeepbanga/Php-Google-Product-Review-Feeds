@@ -16,7 +16,7 @@ class ChildElementPropertyTest extends TestCase
 
         $this->assertEquals([
             'name' => 'xml_key',
-            'value' => 'value'
+            'value' => 'value',
         ], $payload);
     }
 }

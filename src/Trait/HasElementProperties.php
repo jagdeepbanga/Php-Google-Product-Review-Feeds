@@ -20,7 +20,6 @@ trait HasElementProperties
      * @param  int|string|ElementProperty|Cdata  $value
      * @param  bool  $isCData
      * @param  array<string,string>  $attributes
-     *
      * @return $this
      */
     public function setElement(

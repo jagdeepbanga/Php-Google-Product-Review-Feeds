@@ -59,7 +59,7 @@ class Feed
                 [
                     'name' => 'favicon',
                     'value' => $this->publisherFavIcon,
-                ]
+                ],
             ],
             'reviews' => [],
         ];

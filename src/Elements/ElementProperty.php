@@ -24,13 +24,13 @@ class ElementProperty
     }
 
     /**
-     * @param string $name
-     *
+     * @param  string  $name
      * @return ElementProperty
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 }
