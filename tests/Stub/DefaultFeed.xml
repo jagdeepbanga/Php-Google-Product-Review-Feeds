@@ -3,10 +3,10 @@
       xmlns:noNamespaceSchemaLocation="http://www.google.com/shopping/reviews/schema/product/2.3/product_reviews.xsd">
     <version>2.3</version>
     <aggregator>
-        <name_temp>Product Review Feed</name_temp>
+        <name>Product Review Feed</name>
     </aggregator>
     <publisher>
-        <name_temp>Company Name</name_temp>
+        <name>Company Name</name>
         <favicon>https://www.example.com/favicon.ico</favicon>
     </publisher>
     <reviews/>
