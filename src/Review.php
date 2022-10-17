@@ -3,42 +3,15 @@
 namespace JagdeepBanga\GoogleProductReviewFeed;
 
 use JagdeepBanga\GoogleProductReviewFeed\Elements\ElementProperty;
-use JagdeepBanga\GoogleProductReviewFeed\Elements\ReviewerChildElement;
 use JagdeepBanga\GoogleProductReviewFeed\Trait\HasElementProperties;
 
 class Review
 {
     use HasElementProperties;
 
-    private ReviewerChildElement $reviewer;
-
-    public function __construct()
-    {
-        $this->reviewer = new ReviewerChildElement();
-    }
-
-    public function setName(string $name): self
-    {
-        $this->reviewer->setElement('name', $name, true);
-        $propertyBag = $this->reviewer->getPropertyBag()->setName('reviewer');
-        $this->setElement('reviewer', $propertyBag);
-
-        return $this;
-    }
-
     public function setId(int $id): self
     {
-        $this->reviewer->setElement('reviewer_id', $id);
-        $propertyBag = $this->reviewer->getPropertyBag()->setName('reviewer');
-        $this->setElement('reviewer', $propertyBag);
         $this->setElement('review_id', $id);
-
-        return $this;
-    }
-
-    public function setTimeStamp(string $timeStamp): self
-    {
-        $this->setElement('review_timestamp', $timeStamp);
 
         return $this;
     }
@@ -75,10 +48,24 @@ class Review
         return $this;
     }
 
+    public function setTimeStamp(string $timeStamp): self
+    {
+        $this->setElement('review_timestamp', $timeStamp);
+
+        return $this;
+    }
+
     public function addProduct(Product $product): self
     {
         $propertyBag = (new ElementProperty())->setElement('product', $product->getPropertyBag())->setName('products');
         $this->setElement('products', $propertyBag);
+
+        return $this;
+    }
+
+    public function addReviewer(Reviewer $reviewer): self
+    {
+        $this->setElement('reviewer', $reviewer->getPropertyBag());
 
         return $this;
     }
