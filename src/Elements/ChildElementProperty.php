@@ -15,13 +15,13 @@ class ChildElementProperty
      * ProductProperty constructor.
      *
      * @param  string  $elementName
-     * @param  string|ElementProperty|Cdata  $value
+     * @param  int|string|ElementProperty|Cdata  $value
      * @param  bool  $isCData
      * @param  array  $attributes
      */
     public function __construct(
         string $elementName,
-        string|ElementProperty|Cdata $value,
+        int|string|ElementProperty|Cdata $value,
         bool $isCData = false,
         array $attributes = []
     ) {
@@ -45,7 +45,7 @@ class ChildElementProperty
         return null;
     }
 
-    public function getValue(): string|ElementProperty|Cdata
+    public function getValue(): int|string|ElementProperty|Cdata
     {
         return $this->value;
     }
