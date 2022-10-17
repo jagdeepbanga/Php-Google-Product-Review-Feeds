@@ -83,7 +83,11 @@ class Review
         return $this;
     }
 
-    public function getXmlStructure($namespace): array
+    /**
+     * @param  string  $namespace
+     * @return array<string, mixed>
+     */
+    public function getXmlStructure(string $namespace): array
     {
         return [
             'review' => $this->getPropertiesXmlStructure($namespace),

@@ -7,8 +7,14 @@ use Sabre\Xml\Element\Cdata;
 class ChildElementProperty
 {
     private string $elementName;
+
     private string|ElementProperty|Cdata $value;
+
     private bool $isCData;
+
+    /**
+     * @var array<string,string>
+     */
     private array $attributes;
 
     /**
@@ -17,7 +23,7 @@ class ChildElementProperty
      * @param  string  $elementName
      * @param  int|string|ElementProperty|Cdata  $value
      * @param  bool  $isCData
-     * @param  array  $attributes
+     * @param  array<string, string>  $attributes
      */
     public function __construct(
         string $elementName,
@@ -36,6 +42,9 @@ class ChildElementProperty
         return $this->elementName;
     }
 
+    /**
+     * @return string[]|null
+     */
     public function getAttributes(): ?array
     {
         if (! empty($this->attributes)) {
@@ -55,7 +64,11 @@ class ChildElementProperty
         return $this->isCData;
     }
 
-    public function getXmlStructure($namespace): array
+    /**
+     * @param  string  $namespace
+     * @return array<string, mixed>
+     */
+    public function getXmlStructure(string $namespace): array
     {
         $value = $this->isCData() && is_string($this->getValue()) ? new Cdata($this->getValue()) : $this->getValue();
 

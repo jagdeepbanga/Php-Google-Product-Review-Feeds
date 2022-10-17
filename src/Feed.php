@@ -11,6 +11,9 @@ class Feed
 
     private string $publisherFavIcon;
 
+    /**
+     * @var array<int, Review>
+     */
     private array $entries = [];
 
     public function __construct(string $publisherName, string $publisherFavIcon)

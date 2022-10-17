@@ -15,6 +15,14 @@ trait HasElementProperties
      */
     private array $elements = [];
 
+    /**
+     * @param  string  $name
+     * @param  int|string|ElementProperty|Cdata  $value
+     * @param  bool  $isCData
+     * @param  array<string,string>  $attributes
+     *
+     * @return $this
+     */
     public function setElement(
         string $name,
         int|string|ElementProperty|Cdata $value,
@@ -27,7 +35,11 @@ trait HasElementProperties
         return $this;
     }
 
-    public function getPropertiesXmlStructure($namespace): array
+    /**
+     * @param  string  $namespace
+     * @return array<int, mixed>
+     */
+    public function getPropertiesXmlStructure(string $namespace): array
     {
         $result = [];
 
