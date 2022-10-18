@@ -37,7 +37,7 @@
   },
   "scripts": {
     "phpstan": "phpstan analyse -l 6 src",
-    "test": "vendor/bin/phpunit --configuration phpunit.xml"
+    "test": "vendor/bin/phpunit"
   },
   "config": {
     "sort-packages": true
