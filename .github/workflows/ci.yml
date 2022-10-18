@@ -1,15 +1,19 @@
-name: Continuous Integration
+name: PHP Composer
+
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
     - uses: actions/checkout@v2
 
     - name: Validate composer.json and composer.lock
