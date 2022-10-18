@@ -1,9 +1,13 @@
 {
   "name": "jagdeepbanga/php-google-product-review-feeds",
-  "description": "Google Product Review Feeds Generator in PHP",
+  "description": "Google Product Review Feed Generator in PHP",
   "keywords": [
-    "jagdeepbanga",
-    "php-google-product-review-feeds"
+    "php",
+    "google",
+    "product",
+    "review",
+    "feed",
+    "generator"
   ],
   "homepage": "https://github.com/jagdeepbanga/php-google-product-review-feeds",
   "license": "MIT",
@@ -23,12 +27,12 @@
   },
   "autoload": {
     "psr-4": {
-      "JagdeepBanga\\GoogleProductReviewFeed\\": "src"
+      "Jagdeepbanga\\GoogleProductReviewFeed\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "JagdeepBanga\\GoogleProductReviewFeed\\Tests\\": "tests"
+      "Jagdeepbanga\\GoogleProductReviewFeed\\Tests\\": "tests"
     }
   },
   "scripts": {
@@ -39,7 +43,6 @@
       "phpunit --configuration phpunit.xml"
     ],
     "test": [
-      "composer phpstan",
       "composer phpunit"
     ]
   },
