@@ -1,6 +1,6 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Services;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Services;
 
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;

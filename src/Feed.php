@@ -1,9 +1,9 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed;
+namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use JagdeepBanga\GoogleProductReviewFeed\Services\XmlElement;
-use JagdeepBanga\GoogleProductReviewFeed\Services\XmlService;
+use Jagdeepbanga\GoogleProductReviewFeed\Services\XmlElement;
+use Jagdeepbanga\GoogleProductReviewFeed\Services\XmlService;
 
 class Feed
 {

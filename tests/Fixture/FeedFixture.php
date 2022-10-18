@@ -1,6 +1,6 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Tests\Fixture;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Tests\Fixture;
 
 class FeedFixture
 {

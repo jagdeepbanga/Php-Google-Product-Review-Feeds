@@ -1,6 +1,6 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Tests;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

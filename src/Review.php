@@ -1,9 +1,9 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed;
+namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use JagdeepBanga\GoogleProductReviewFeed\Elements\ElementProperty;
-use JagdeepBanga\GoogleProductReviewFeed\Trait\HasElementProperties;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ElementProperty;
+use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
 
 class Review
 {

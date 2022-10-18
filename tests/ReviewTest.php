@@ -1,12 +1,12 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Tests;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Tests;
 
-use JagdeepBanga\GoogleProductReviewFeed\Feed;
-use JagdeepBanga\GoogleProductReviewFeed\Product;
-use JagdeepBanga\GoogleProductReviewFeed\Review;
-use JagdeepBanga\GoogleProductReviewFeed\Reviewer;
-use JagdeepBanga\GoogleProductReviewFeed\Tests\Fixture\FeedFixture;
+use Jagdeepbanga\GoogleProductReviewFeed\Feed;
+use Jagdeepbanga\GoogleProductReviewFeed\Product;
+use Jagdeepbanga\GoogleProductReviewFeed\Review;
+use Jagdeepbanga\GoogleProductReviewFeed\Reviewer;
+use Jagdeepbanga\GoogleProductReviewFeed\Tests\Fixture\FeedFixture;
 
 class ReviewTest extends TestCase
 {

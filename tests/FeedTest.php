@@ -1,9 +1,9 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Tests;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Tests;
 
-use JagdeepBanga\GoogleProductReviewFeed\Feed;
-use JagdeepBanga\GoogleProductReviewFeed\Tests\Fixture\FeedFixture;
+use Jagdeepbanga\GoogleProductReviewFeed\Feed;
+use Jagdeepbanga\GoogleProductReviewFeed\Tests\Fixture\FeedFixture;
 
 class FeedTest extends TestCase
 {

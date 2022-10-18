@@ -1,9 +1,9 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Tests\Unit;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Tests\Unit;
 
-use JagdeepBanga\GoogleProductReviewFeed\Elements\ChildElementProperty;
-use JagdeepBanga\GoogleProductReviewFeed\Tests\TestCase;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ChildElementProperty;
+use Jagdeepbanga\GoogleProductReviewFeed\Tests\TestCase;
 
 class ChildElementPropertyTest extends TestCase
 {

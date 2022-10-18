@@ -1,8 +1,8 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed;
+namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use JagdeepBanga\GoogleProductReviewFeed\Trait\HasElementProperties;
+use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
 
 class Reviewer
 {

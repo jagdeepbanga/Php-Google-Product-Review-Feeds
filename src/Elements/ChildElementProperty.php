@@ -1,6 +1,6 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Elements;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Elements;
 
 use Sabre\Xml\Element\Cdata;
 

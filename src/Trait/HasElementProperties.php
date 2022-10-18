@@ -1,9 +1,9 @@
 <?php
 
-namespace JagdeepBanga\GoogleProductReviewFeed\Trait;
+namespace Jagdeepbanga\GoogleProductReviewFeed\Trait;
 
-use JagdeepBanga\GoogleProductReviewFeed\Elements\ChildElementProperty;
-use JagdeepBanga\GoogleProductReviewFeed\Elements\ElementProperty;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ChildElementProperty;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ElementProperty;
 use Sabre\Xml\Element\Cdata;
 
 trait HasElementProperties
