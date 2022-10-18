@@ -20,7 +20,7 @@ the [Google Product Review Feeds Specification](https://developers.google.com/pr
 To Generate Review xml feed, Product, Reviewer and Review data required.
 
 To see generated xml feed from following
-example [Click Here](https://raw.githubusercontent.com/jagdeepbanga/php-google-product-review-feeds/master/tests/Stub/ReviewXmlFeed.xml)
+example [Click Here](https://github.com/jagdeepbanga/php-google-product-review-feeds/blob/master/tests/Stub/ReviewXmlFeed.xml)
 .
 
 ```php
