@@ -39,11 +39,8 @@
     "phpstan": [
       "phpstan analyse -l 6 src tests"
     ],
-    "phpunit": [
-      "phpunit --configuration phpunit.xml"
-    ],
     "test": [
-      "composer phpunit"
+      "vendor/bin/phpunit --configuration phpunit.xml"
     ]
   },
   "config": {
