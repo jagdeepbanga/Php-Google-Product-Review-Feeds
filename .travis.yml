@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 8.0
+
+env:
+  matrix:
+    - COMPOSER_FLAG="--prefer-lowest"
+    - COMPOSER_FLAG=""
+
+before_script:
+  - travis_retry composer update ${COMPOSER_FLAG}
+
+script:
+  - vendor/bin/phpunit
