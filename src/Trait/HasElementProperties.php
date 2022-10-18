@@ -2,8 +2,8 @@
 
 namespace Jagdeepbanga\GoogleProductReviewFeed\Trait;
 
-use Jagdeepbanga\GoogleProductReviewFeed\Elements\ChildElementProperty;
-use Jagdeepbanga\GoogleProductReviewFeed\Elements\ElementProperty;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ChildElementProperties;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ParentElementProperties;
 use Sabre\Xml\Element\Cdata;
 
 trait HasElementProperties
@@ -11,24 +11,24 @@ trait HasElementProperties
     /**
      * Attributes
      *
-     * @var ChildElementProperty[]
+     * @var ChildElementProperties[]
      */
     private array $elements = [];
 
     /**
      * @param  string  $name
-     * @param  int|string|ElementProperty|Cdata  $value
+     * @param  int|string|ParentElementProperties|Cdata  $value
      * @param  bool  $isCData
      * @param  array<string,string>  $attributes
      * @return $this
      */
     public function setElement(
         string $name,
-        int|string|ElementProperty|Cdata $value,
+        int|string|ParentElementProperties|Cdata $value,
         bool $isCData = false,
         array $attributes = []
     ): self {
-        $elementProperty = new ChildElementProperty($name, $value, $isCData, $attributes);
+        $elementProperty = new ChildElementProperties($name, $value, $isCData, $attributes);
         $this->elements[strtolower($name)] = $elementProperty;
 
         return $this;
@@ -49,9 +49,9 @@ trait HasElementProperties
         return $result;
     }
 
-    public function getPropertyBag(): ElementProperty
+    public function getPropertyBag(): ParentElementProperties
     {
-        $propertyBag = new ElementProperty();
+        $propertyBag = new ParentElementProperties();
         foreach ($this->elements as $element) {
             $value = $element->isCData() ? new Cdata($element->getValue()) : $element->getValue();
             $propertyBag->setElement($element->getElementName(), $value, $element->isCData());

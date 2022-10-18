@@ -2,10 +2,10 @@
 
 namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use Jagdeepbanga\GoogleProductReviewFeed\Elements\ElementProperty;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ParentElementProperties;
 use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
 
-class Review
+class ReviewFeed
 {
     use HasElementProperties;
 
@@ -32,7 +32,7 @@ class Review
 
     public function setRating(int $rating): self
     {
-        $propertyBag = (new ElementProperty())->setElement('overall', $rating, false, [
+        $propertyBag = (new ParentElementProperties())->setElement('overall', $rating, false, [
             'min' => '1',
             'max' => '5',
         ])->setName('ratings');
@@ -55,15 +55,15 @@ class Review
         return $this;
     }
 
-    public function addProduct(Product $product): self
+    public function addProduct(ProductFeed $product): self
     {
-        $propertyBag = (new ElementProperty())->setElement('product', $product->getPropertyBag())->setName('products');
+        $propertyBag = (new ParentElementProperties())->setElement('product', $product->getPropertyBag())->setName('products');
         $this->setElement('products', $propertyBag);
 
         return $this;
     }
 
-    public function addReviewer(Reviewer $reviewer): self
+    public function addReviewer(ReviewerFeed $reviewer): self
     {
         $this->setElement('reviewer', $reviewer->getPropertyBag());
 

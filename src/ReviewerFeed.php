@@ -4,7 +4,7 @@ namespace Jagdeepbanga\GoogleProductReviewFeed;
 
 use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
 
-class Reviewer
+class ReviewerFeed
 {
     use HasElementProperties;
 

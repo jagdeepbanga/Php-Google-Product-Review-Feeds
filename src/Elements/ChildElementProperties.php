@@ -4,11 +4,11 @@ namespace Jagdeepbanga\GoogleProductReviewFeed\Elements;
 
 use Sabre\Xml\Element\Cdata;
 
-class ChildElementProperty
+class ChildElementProperties
 {
     private string $elementName;
 
-    private string|ElementProperty|Cdata $value;
+    private string|ParentElementProperties|Cdata $value;
 
     private bool $isCData;
 
@@ -21,13 +21,13 @@ class ChildElementProperty
      * ProductProperty constructor.
      *
      * @param  string  $elementName
-     * @param  int|string|ElementProperty|Cdata  $value
+     * @param  int|string|ParentElementProperties|Cdata  $value
      * @param  bool  $isCData
      * @param  array<string, string>  $attributes
      */
     public function __construct(
         string $elementName,
-        int|string|ElementProperty|Cdata $value,
+        int|string|ParentElementProperties|Cdata $value,
         bool $isCData = false,
         array $attributes = []
     ) {
@@ -54,7 +54,7 @@ class ChildElementProperty
         return null;
     }
 
-    public function getValue(): int|string|ElementProperty|Cdata
+    public function getValue(): int|string|ParentElementProperties|Cdata
     {
         return $this->value;
     }
@@ -72,7 +72,7 @@ class ChildElementProperty
     {
         $value = $this->isCData() && is_string($this->getValue()) ? new Cdata($this->getValue()) : $this->getValue();
 
-        if ($value instanceof ElementProperty) {
+        if ($value instanceof ParentElementProperties) {
             $value = $value->getPropertiesXmlStructure($namespace);
         }
 

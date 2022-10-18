@@ -3,30 +3,30 @@
 namespace Jagdeepbanga\GoogleProductReviewFeed\Tests;
 
 use Jagdeepbanga\GoogleProductReviewFeed\Feed;
-use Jagdeepbanga\GoogleProductReviewFeed\Product;
-use Jagdeepbanga\GoogleProductReviewFeed\Review;
-use Jagdeepbanga\GoogleProductReviewFeed\Reviewer;
+use Jagdeepbanga\GoogleProductReviewFeed\ProductFeed;
+use Jagdeepbanga\GoogleProductReviewFeed\ReviewFeed;
+use Jagdeepbanga\GoogleProductReviewFeed\ReviewerFeed;
 use Jagdeepbanga\GoogleProductReviewFeed\Tests\Fixture\FeedFixture;
 
-class ReviewTest extends TestCase
+class ReviewFeedTest extends TestCase
 {
     /** @test */
     public function can_generate_product_review_feed(): void
     {
         $expectedReviewXmlFeed = FeedFixture::getReviewExpectedXml();
 
-        $product = new Product();
+        $product = new ProductFeed();
         $product->setName('Product Name');
         $product->setGtin('1234567890123');
         $product->setSku('1234567890123');
         $product->setBrand('Brand Name');
         $product->setUrl('https://www.example.com/product/1');
 
-        $reviewer = new Reviewer();
+        $reviewer = new ReviewerFeed();
         $reviewer->setName('John Doe');
         $reviewer->setId('234');
 
-        $review = new Review();
+        $review = new ReviewFeed();
         $review->setTimeStamp('2020-01-01T00:00:00+00:00');
         $review->setTitle('Excellent');
         $review->setId(123);
@@ -37,11 +37,11 @@ class ReviewTest extends TestCase
         $review->addReviewer($reviewer);
         $review->addProduct($product);
 
-        $reviewer2 = new Reviewer();
+        $reviewer2 = new ReviewerFeed();
         $reviewer2->setName('Peter Parker');
         $reviewer2->setId('235');
 
-        $review2 = new Review();
+        $review2 = new ReviewFeed();
         $review2->setTimeStamp('2022-03-07T00:00:00+00:00');
         $review2->setTitle('Good');
         $review2->setId(124);

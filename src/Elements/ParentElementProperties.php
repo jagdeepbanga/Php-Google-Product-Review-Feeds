@@ -4,28 +4,20 @@ namespace Jagdeepbanga\GoogleProductReviewFeed\Elements;
 
 use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
 
-class ElementProperty
+class ParentElementProperties
 {
     use HasElementProperties;
 
-    /**
-     * Property name
-     *
-     * @var string
-     */
-    protected $name;
+    protected string $name;
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
      * @param  string  $name
-     * @return ElementProperty
+     * @return ParentElementProperties
      */
     public function setName($name)
     {

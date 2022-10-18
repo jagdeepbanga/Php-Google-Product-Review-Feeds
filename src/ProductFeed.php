@@ -2,18 +2,18 @@
 
 namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use Jagdeepbanga\GoogleProductReviewFeed\Elements\ProductChildElement;
+use Jagdeepbanga\GoogleProductReviewFeed\Elements\ProductChildElementProperties;
 use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
 
-class Product
+class ProductFeed
 {
     use HasElementProperties;
 
-    private ProductChildElement $productIdsBag;
+    private ProductChildElementProperties $productIdsBag;
 
     public function __construct()
     {
-        $this->productIdsBag = new ProductChildElement();
+        $this->productIdsBag = new ProductChildElementProperties();
     }
 
     public function setName(string $name): self

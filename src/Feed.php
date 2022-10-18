@@ -12,7 +12,7 @@ class Feed
     private string $publisherFavIcon;
 
     /**
-     * @var array<int, Review>
+     * @var array<int, ReviewFeed>
      */
     private array $entries = [];
 
@@ -65,7 +65,7 @@ class Feed
         ];
     }
 
-    public function addReview(Review $review): self
+    public function addReview(ReviewFeed $review): self
     {
         $this->entries[] = $review;
 
