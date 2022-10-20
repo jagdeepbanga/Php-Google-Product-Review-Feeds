@@ -4,8 +4,8 @@ namespace Jagdeepbanga\GoogleProductReviewFeed\Tests;
 
 use Jagdeepbanga\GoogleProductReviewFeed\Feed;
 use Jagdeepbanga\GoogleProductReviewFeed\ProductFeed;
-use Jagdeepbanga\GoogleProductReviewFeed\ReviewFeed;
 use Jagdeepbanga\GoogleProductReviewFeed\ReviewerFeed;
+use Jagdeepbanga\GoogleProductReviewFeed\ReviewFeed;
 use Jagdeepbanga\GoogleProductReviewFeed\Tests\Fixture\FeedFixture;
 
 class ReviewFeedTest extends TestCase
@@ -37,6 +37,13 @@ class ReviewFeedTest extends TestCase
         $review->addReviewer($reviewer);
         $review->addProduct($product);
 
+        $product2 = new ProductFeed();
+        $product2->setName('Product Name 2');
+        $product2->setGtin('2345678901234');
+        $product2->setSku('5678901234567');
+        $product2->setBrand('Brand Name 2');
+        $product2->setUrl('https://www.example.com/product/2');
+
         $reviewer2 = new ReviewerFeed();
         $reviewer2->setName('Peter Parker');
         $reviewer2->setId('235');
@@ -49,7 +56,7 @@ class ReviewFeedTest extends TestCase
         $review2->setRating(4);
         $review2->setContent('Lorem ipsum dolor sit amet');
         $review2->addReviewer($reviewer2);
-        $review2->addProduct($product);
+        $review2->addProduct($product2);
 
         $feed = new Feed('Company Name', 'https://www.example.com/favicon.ico');
         $feed->addReview($review);

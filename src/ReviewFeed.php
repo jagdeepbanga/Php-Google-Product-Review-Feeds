@@ -2,82 +2,67 @@
 
 namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use Jagdeepbanga\GoogleProductReviewFeed\Elements\ParentElementProperties;
-use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
+use Jagdeepbanga\GoogleProductReviewFeed\Data\ElementData;
 
-class ReviewFeed
+class ReviewFeed extends BaseFeed
 {
-    use HasElementProperties;
-
     public function setId(int $id): self
     {
-        $this->setElement('review_id', $id);
+        $this->elements->push(ElementData::create('review_id', $id));
 
         return $this;
     }
 
     public function setTitle(string $title): self
     {
-        $this->setElement('title', $title);
+        $this->elements->push(ElementData::create('title', $title));
 
         return $this;
     }
 
     public function setUrl(string $url): self
     {
-        $this->setElement('review_url', $url, false, ['type' => 'singleton']);
+        $this->elements->push(ElementData::create('review_url', $url, false, ['type' => 'singleton']));
 
         return $this;
     }
 
     public function setRating(int $rating): self
     {
-        $propertyBag = (new ParentElementProperties())->setElement('overall', $rating, false, [
-            'min' => '1',
-            'max' => '5',
-        ])->setName('ratings');
-        $this->setElement('ratings', $propertyBag);
+        $childElement = ElementData::create('overall', $rating, false, ['min' => '1', 'max' => '5']);
+
+        $this->elements->push(ElementData::addChild('ratings', $childElement));
 
         return $this;
     }
 
     public function setContent(string $content): self
     {
-        $this->setElement('content', $content, true);
+        $this->elements->push(ElementData::create('content', $content, true));
 
         return $this;
     }
 
     public function setTimeStamp(string $timeStamp): self
     {
-        $this->setElement('review_timestamp', $timeStamp);
+        $this->elements->push(ElementData::create('review_timestamp', $timeStamp));
 
         return $this;
     }
 
     public function addProduct(ProductFeed $product): self
     {
-        $propertyBag = (new ParentElementProperties())->setElement('product', $product->getPropertyBag())->setName('products');
-        $this->setElement('products', $propertyBag);
+        $childElement = ElementData::addChild('product', $product->getElements());
+
+        $this->elements->push(ElementData::addChild('products', $childElement));
 
         return $this;
     }
 
     public function addReviewer(ReviewerFeed $reviewer): self
     {
-        $this->setElement('reviewer', $reviewer->getPropertyBag());
+        $this->elements->push(ElementData::addChild('reviewer', $reviewer->getElements()));
 
         return $this;
-    }
-
-    /**
-     * @param  string  $namespace
-     * @return array<string, mixed>
-     */
-    public function getXmlStructure(string $namespace): array
-    {
-        return [
-            'review' => $this->getPropertiesXmlStructure($namespace),
-        ];
     }
 }

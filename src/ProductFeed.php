@@ -2,58 +2,67 @@
 
 namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use Jagdeepbanga\GoogleProductReviewFeed\Elements\ProductChildElementProperties;
-use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
+use Illuminate\Support\Collection;
+use Jagdeepbanga\GoogleProductReviewFeed\ChildFeed\ProductChildFeed;
+use Jagdeepbanga\GoogleProductReviewFeed\Data\ElementData;
 
-class ProductFeed
+class ProductFeed extends BaseFeed
 {
-    use HasElementProperties;
-
-    private ProductChildElementProperties $productIdsBag;
+    private ProductChildFeed $productIdsChild;
 
     public function __construct()
     {
-        $this->productIdsBag = new ProductChildElementProperties();
+        $this->productIdsChild = new ProductChildFeed();
+
+        parent::__construct();
     }
 
     public function setName(string $name): self
     {
-        $this->setElement('product_name', $name, true);
+        $this->elements->push(ElementData::create('product_name', $name, true));
 
         return $this;
     }
 
     public function setGtin(string $gtin): self
     {
-        $this->productIdsBag->setGtin($gtin);
-        $propertyBag = $this->productIdsBag->getPropertyBag()->setName('product_ids');
-        $this->setElement('product_ids', $propertyBag);
+        $this->productIdsChild->setGtin($gtin);
 
         return $this;
     }
 
     public function setSku(string $sku): self
     {
-        $this->productIdsBag->setSku($sku);
-        $propertyBag = $this->productIdsBag->getPropertyBag()->setName('product_ids');
-        $this->setElement('product_ids', $propertyBag);
+        $this->productIdsChild->setSku($sku);
 
         return $this;
     }
 
     public function setBrand(string $brand): self
     {
-        $this->productIdsBag->setBrand($brand);
-        $propertyBag = $this->productIdsBag->getPropertyBag()->setName('product_ids');
-        $this->setElement('product_ids', $propertyBag);
+        $this->productIdsChild->setBrand($brand);
 
         return $this;
     }
 
     public function setUrl(string $url): self
     {
-        $this->setElement('product_url', $url);
+        $this->elements->push(ElementData::create('product_url', $url));
 
         return $this;
+    }
+
+    private function setProductIdsChild(): self
+    {
+        $this->elements->push(ElementData::addChild('product_ids', $this->productIdsChild->getElements()));
+
+        return $this;
+    }
+
+    public function getElements(): Collection
+    {
+        $this->setProductIdsChild();
+
+        return $this->elements;
     }
 }

@@ -27,6 +27,7 @@
             <products>
                 <product>
                     <product_name><![CDATA[Product Name]]></product_name>
+                    <product_url>https://www.example.com/product/1</product_url>
                     <product_ids>
                         <gtins>
                             <gtin>1234567890123</gtin>
@@ -38,7 +39,6 @@
                             <brand><![CDATA[Brand Name]]></brand>
                         </brands>
                     </product_ids>
-                    <product_url>https://www.example.com/product/1</product_url>
                 </product>
             </products>
         </review>
@@ -57,19 +57,19 @@
             </reviewer>
             <products>
                 <product>
-                    <product_name>Product Name</product_name>
+                    <product_name>Product Name 2</product_name>
+                    <product_url>https://www.example.com/product/2</product_url>
                     <product_ids>
                         <gtins>
-                            <gtin>1234567890123</gtin>
+                            <gtin>2345678901234</gtin>
                         </gtins>
                         <skus>
-                            <sku>1234567890123</sku>
+                            <sku>5678901234567</sku>
                         </skus>
                         <brands>
-                            <brand>Brand Name</brand>
+                            <brand>Brand Name 2</brand>
                         </brands>
                     </product_ids>
-                    <product_url>https://www.example.com/product/1</product_url>
                 </product>
             </products>
         </review>

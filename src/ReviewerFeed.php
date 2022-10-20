@@ -2,22 +2,20 @@
 
 namespace Jagdeepbanga\GoogleProductReviewFeed;
 
-use Jagdeepbanga\GoogleProductReviewFeed\Trait\HasElementProperties;
+use Jagdeepbanga\GoogleProductReviewFeed\Data\ElementData;
 
-class ReviewerFeed
+class ReviewerFeed extends BaseFeed
 {
-    use HasElementProperties;
-
     public function setName(string $name): self
     {
-        $this->setElement('name', $name, true);
+        $this->elements->push(ElementData::create('name', $name));
 
         return $this;
     }
 
     public function setId(string $id): self
     {
-        $this->setElement('reviewer_id', $id);
+        $this->elements->push(ElementData::create('reviewer_id', $id));
 
         return $this;
     }

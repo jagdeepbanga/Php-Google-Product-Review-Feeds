@@ -19,7 +19,9 @@
   ],
   "require": {
     "php": "^8.0",
-    "sabre/xml": "^4.0"
+    "illuminate/support": "^9.36",
+    "sabre/xml": "^4.0",
+    "spatie/data-transfer-object": "^3.9"
   },
   "require-dev": {
     "phpstan/phpstan": "^1.8",
