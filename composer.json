@@ -38,7 +38,7 @@
     }
   },
   "scripts": {
-    "phpstan": "phpstan analyse -l 6 src",
+    "analyse": "vendor/bin/phpstan analyse",
     "test": "vendor/bin/phpunit"
   },
   "config": {

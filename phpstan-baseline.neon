@@ -1,0 +1,8 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Jagdeepbanga\\\\GoogleProductReviewFeed\\\\Data\\\\Casters\\\\ElementDataCollectionCaster\\:\\:cast\\(\\) should return Jagdeepbanga\\\\GoogleProductReviewFeed\\\\Data\\\\Collection\\\\CollectionOfElementData but returns Illuminate\\\\Support\\\\Collection\\<int, mixed\\>\\.$#"
+			count: 1
+			path: src/Data/Casters/ElementDataCollectionCaster.php
+
+
